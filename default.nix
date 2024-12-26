@@ -1,17 +1,13 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ./config
-    ./plugins
-    ./utils
-    ./options.nix
-  ];
+  imports = [ ./custom ./config ./plugins ./utils ./options.nix ];
 
   config = {
     editorconfig.enable = true;
     # Use <Space> as leader key
     globals.mapleader = " ";
+    extraConfigLua = builtins.readFile ./lua/utils.lua;
 
     # Set 'vi' and 'vim' aliases to nixvim
     viAlias = true;
@@ -34,6 +30,7 @@
       vim-devicons
       nvim-web-devicons
       nvim-nonicons
+      nui-nvim
     ];
   };
 }

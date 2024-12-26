@@ -1,11 +1,10 @@
-{...}: {
+{ ... }: {
   opts = {
     enable = true;
     settings = {
-
 
     };
 
   };
 
-  }
+}

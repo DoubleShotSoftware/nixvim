@@ -37,13 +37,15 @@
     {
       mode = "n";
       key = "<leader>uD";
-      action.__raw = "function() require('notify').dismiss { pending = true, silent = true } end";
+      action.__raw =
+        "function() require('notify').dismiss { pending = true, silent = true } end";
       options.desc = "Dismiss notifications";
     }
     {
       mode = "n";
       key = "<leader>fn";
-      action.__raw = "function() TelescopeWithTheme('notify', {}, 'notify') end";
+      action.__raw =
+        "function() TelescopeWithTheme('notify', {}, 'notify') end";
       options.desc = "Find notifications";
     }
   ];

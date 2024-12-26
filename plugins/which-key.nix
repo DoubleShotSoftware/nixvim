@@ -12,16 +12,46 @@
       icons.group = "";
       disable.ft = [ "TelescopePrompt" "neo-tree" "neo-tree-popup" ];
       spec = [
-            { __unkeyed-1 = "<leader>b"; group = "󰓩 Buffers";}
-    { __unkeyed-1 = "<leader>bs"; group = "󰒺 Sort Buffers";}
-    { __unkeyed-1 = "<leader>d"; group = " Debugger";}
-    { __unkeyed-1 = "<leader>f"; group = " Find";}
-    { __unkeyed-1 = "<leader>g"; group = "󰊢 Git";}
-    { __unkeyed-1 = "<leader>l"; group = " Language Tools";}
-    { __unkeyed-1 = "<leader>m"; group = " Markdown";}
-    { __unkeyed-1 = "<leader>s"; group = "󱂬 Session";}
-    { __unkeyed-1 = "<leader>t"; group = " Terminal";}
-    { __unkeyed-1 = "<leader>u"; group = " UI/UX";}
+        {
+          __unkeyed-1 = "<leader>b";
+          group = "󰓩 Buffers";
+        }
+        {
+          __unkeyed-1 = "<leader>bs";
+          group = "󰒺 Sort Buffers";
+        }
+        {
+          __unkeyed-1 = "<leader>d";
+          group = " Debugger";
+        }
+        {
+          __unkeyed-1 = "<leader>f";
+          group = " Find";
+        }
+        {
+          __unkeyed-1 = "<leader>g";
+          group = "󰊢 Git";
+        }
+        {
+          __unkeyed-1 = "<leader>l";
+          group = " Language Tools";
+        }
+        {
+          __unkeyed-1 = "<leader>m";
+          group = " Markdown";
+        }
+        {
+          __unkeyed-1 = "<leader>s";
+          group = "󱂬 Session";
+        }
+        {
+          __unkeyed-1 = "<leader>t";
+          group = " Terminal";
+        }
+        {
+          __unkeyed-1 = "<leader>u";
+          group = " UI/UX";
+        }
       ];
     };
 

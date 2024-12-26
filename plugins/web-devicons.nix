@@ -3,7 +3,5 @@
 { icons, ... }:
 
 {
-  opts = {
-    enable = true;
-  };
+  opts = { enable = true; };
 }

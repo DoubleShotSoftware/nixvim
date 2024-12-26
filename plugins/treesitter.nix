@@ -34,20 +34,15 @@
     ];
     settings = {
       auto_install = false;
-      ensure_installed = [
-        "c_sharp"
-        "bash"
-        "dockerfile"
-        "typescript"
-        "python"
-      ];
+      ensure_installed =
+        [ "c_sharp" "bash" "dockerfile" "typescript" "python" ];
       highlight = {
         additional_vim_regex_highlighting = true;
         custom_captures = { };
-        disable = [  ];
+        disable = [ ];
         enable = true;
       };
-      ignore_install = [  ];
+      ignore_install = [ ];
       incremental_selection = {
         enable = true;
         keymaps = {

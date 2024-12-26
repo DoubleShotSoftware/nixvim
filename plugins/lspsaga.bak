@@ -20,7 +20,7 @@
     }
       {
         action = "<cmd>Lspsaga outgoing_calls<CR>";
-        key =  "<leader>co";
+        key =  "<leader>lco";
         mode =  [ "n" ];
         options.desc = "Outgoing Calls";
     }

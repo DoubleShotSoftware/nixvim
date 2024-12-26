@@ -3,9 +3,7 @@
 { helpers, pkgs, ... }:
 
 {
-  opts = {
-    enable = true;
-  };
+  opts = { enable = true; };
 
   rootOpts = {
     # Needed for live grep
@@ -54,94 +52,91 @@
         end
       end
     '';
+    extraConfigLuaPost = ''
+      require('telescope-tabs').setup({})
+    '';
 
     # Use root keymaps to allow usage of custom TelescopeWithTheme function
-    keymaps =
-      let
-        mkTelescopeKeymap =
-          { key
-          , fn
-          , args ? { __empty = true; }
-          , desc ? ""
-          , extension ? null
-          , mode ? "n"
-          }: {
-            inherit key mode;
+    keymaps = let
+      mkTelescopeKeymap = { key, fn, args ? { __empty = true; }, desc ? ""
+        , extension ? null, mode ? "n" }: {
+          inherit key mode;
 
-            action.__raw = "function() TelescopeWithTheme('${fn}', ${helpers.toLuaObject args}, '${builtins.toString extension}') end";
-            options = { inherit desc; };
-          };
-      in
-      map mkTelescopeKeymap [
-        {
-          desc = "Resume previous search";
-          key = "<leader>f<cr>";
-          fn = "resume";
-        }
-        {
-          desc = "Find words in current buffer";
-          key = "<leader>f/";
-          fn = "current_buffer_fuzzy_find";
-        }
-        {
-          desc = "Find LSP Symbols";
-          key = "<leader>fs";
-          fn = "lsp_document_symbols";
-        }
-        {
-          desc = "Find buffers";
-          key = "<leader>fb";
-          fn = "buffers";
-        }
-        {
-          desc = "Find files";
-          key = "<leader>ff";
-          fn = "find_files";
-        }
-        {
-          desc = "Find all files";
-          key = "<leader>fF";
-          fn = "find_files";
-          args = {
-            hidden = true;
-            no_ignore = true;
-          };
-        }
-        {
-          desc = "Find words";
-          key = "<leader>fg";
-          fn = "live_grep";
-        }
-        {
-          desc = "Find help tags";
-          key = "<leader>fh";
-          fn = "help_tags";
-        }
-        {
-          desc = "Find keymaps";
-          key = "<leader>fk";
-          fn = "keymaps";
-        }
-        {
-          desc = "Find history";
-          key = "<leader>fo";
-          fn = "oldfiles";
-        }
-        {
-          desc = "Find registers";
-          key = "<leader>fr";
-          fn = "registers";
-        }
-        {
-          desc = "Find word under cursor";
-          key = "<leader>fw";
-          fn = "grep_string";
-        }
-        {
-          desc = "Search references";
-          key = "gr";
-          fn = "lsp_references";
-        }
-      ];
+          action.__raw = "function() TelescopeWithTheme('${fn}', ${
+              helpers.toLuaObject args
+            }, '${builtins.toString extension}') end";
+          options = { inherit desc; };
+        };
+    in map mkTelescopeKeymap [
+      {
+        desc = "Resume previous search";
+        key = "<leader>f<cr>";
+        fn = "resume";
+      }
+      {
+        desc = "Find words in current buffer";
+        key = "<leader>f/";
+        fn = "current_buffer_fuzzy_find";
+      }
+      {
+        desc = "Find LSP Symbols";
+        key = "<leader>fs";
+        fn = "lsp_document_symbols";
+      }
+      {
+        desc = "Find buffers";
+        key = "<leader>fb";
+        fn = "buffers";
+      }
+      {
+        desc = "Find files";
+        key = "<leader>ff";
+        fn = "find_files";
+      }
+      {
+        desc = "Find all files";
+        key = "<leader>fF";
+        fn = "find_files";
+        args = {
+          hidden = true;
+          no_ignore = true;
+        };
+      }
+      {
+        desc = "Find words";
+        key = "<leader>fg";
+        fn = "live_grep";
+      }
+      {
+        desc = "Find help tags";
+        key = "<leader>fh";
+        fn = "help_tags";
+      }
+      {
+        desc = "Find keymaps";
+        key = "<leader>fk";
+        fn = "keymaps";
+      }
+      {
+        desc = "Find history";
+        key = "<leader>fo";
+        fn = "oldfiles";
+      }
+      {
+        desc = "Find registers";
+        key = "<leader>fr";
+        fn = "registers";
+      }
+      {
+        desc = "Find word under cursor";
+        key = "<leader>fw";
+        fn = "grep_string";
+      }
+      {
+        desc = "Search references";
+        key = "gr";
+        fn = "lsp_references";
+      }
+    ];
   };
 }
