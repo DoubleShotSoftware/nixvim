@@ -1,7 +1,7 @@
 { ... }: {
   opts = {
     enable = true;
-    extraOptions = {
+    settings = {
       panel = {
         enabled = true;
         auto_refresh = false;
@@ -30,17 +30,17 @@
           dismiss = "<C-]>";
         };
       };
-    };
-    filetypes = {
-      yaml = false;
-      markdown = false;
-      help = false;
-      gitcommit = false;
-      gitrebase = false;
-      hgcommit = false;
-      svn = false;
-      cvs = false;
-      "." = false;
+      filetypes = {
+        yaml = false;
+        markdown = false;
+        help = false;
+        gitcommit = false;
+        gitrebase = false;
+        hgcommit = false;
+        svn = false;
+        cvs = false;
+        "." = false;
+      };
     };
   };
   rootOpts = { extraConfigLuaPost = builtins.readFile ../lua/copilot.lua; };

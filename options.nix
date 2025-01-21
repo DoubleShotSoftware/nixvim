@@ -39,6 +39,7 @@
     # the number of spaces inserted for each indentation
     # highlight the current line
     cursorline = true;
+    cursorlineopt = "number";
     # set numbered lines
     number = true;
     # set relative numbered lines
@@ -72,8 +73,7 @@
     # default is "normal"
     foldmethod = "indent";
     foldenable = true;
-    foldlevel = 4;
-
+    foldlevel = 8;
   };
 
 }

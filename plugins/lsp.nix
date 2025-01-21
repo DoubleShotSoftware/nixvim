@@ -128,6 +128,15 @@
 
   rootOpts = {
     colorschemes.catppuccin.settings.integrations.native_lsp.enabled = true;
-    extraPackages = with pkgs; [ csharpier ];
+    extraPackages = with pkgs; [
+      csharpier
+      pgformatter
+      python312Packages.sqlfmt
+      prettierd
+      shfmt
+      astyle
+      alejandra
+      mdformat
+    ];
   };
 }

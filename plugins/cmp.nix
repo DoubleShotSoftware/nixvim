@@ -18,7 +18,6 @@
       sources = [
         { name = "nvim_lsp"; }
         { name = "luasnip"; }
-        { name = "copilot"; }
         { name = "nvim_lua"; }
         { name = "treesitter"; }
         { name = "path"; }
@@ -36,7 +35,6 @@
   };
   rootOpts = {
     plugins = {
-      copilot-cmp.enable = true;
       cmp-treesitter.enable = true;
       cmp-path.enable = true;
       cmp-nvim-lsp.enable = true;

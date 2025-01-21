@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = "fmt",
   pattern = "*",
   callback = function()
-    vim.cmd("undojoin")
+    -- vim.cmd("undojoin")
     vim.cmd("Neoformat")
   end,
 })
