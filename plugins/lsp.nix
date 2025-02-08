@@ -108,7 +108,8 @@
       csharp_ls.enable = true;
       docker_compose_language_service.enable = true;
       dockerls.enable = true;
-      eslint.enable = true;
+      # Disable for now due to symlink being hard errors
+      eslint.enable = false;
       html.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
