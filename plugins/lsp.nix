@@ -37,6 +37,12 @@
         }
         {
           mode = "n";
+          key = "gl";
+          action.__raw = "function() vim.lsp.buf.signature_help() end";
+          options.desc = "Show signature help";
+        }
+        {
+          mode = "n";
           key = "<leader>lL";
           action.__raw = "function() vim.lsp.codelens.run() end";
           options.desc = "LSP CodeLens run";
@@ -69,7 +75,6 @@
           action = "type_definition";
           desc = "Go to type definition";
         };
-
         K = {
           action = "hover";
           desc = "LSP hover";
@@ -105,7 +110,7 @@
     # Load all servers definitions
     servers = {
       bashls.enable = true;
-      csharp_ls.enable = true;
+      # csharp_ls.enable = true;
       docker_compose_language_service.enable = true;
       dockerls.enable = true;
       # Disable for now due to symlink being hard errors
@@ -135,7 +140,6 @@
       python312Packages.sqlfmt
       prettierd
       shfmt
-      astyle
       alejandra
       mdformat
     ];

@@ -3,6 +3,10 @@
     enable = true;
     autoEnableSources = true;
     settings = {
+      formatting = {
+        fields = [ "abbr" "kind" "menu" ];
+        format = (builtins.readFile ../lua/cmp-format.lua);
+      };
       snippet.expand =
         "function(args) require('luasnip').lsp_expand(args.body) end";
       mapping = {

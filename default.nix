@@ -7,7 +7,16 @@
     editorconfig.enable = true;
     # Use <Space> as leader key
     globals.mapleader = " ";
-    extraConfigLua = builtins.readFile ./lua/utils.lua;
+    extraConfigLua = ''
+    vim.api.nvim_set_hl(0, "CmpItemAbbrSemiboldUnderline", {
+      bold = true,
+      underline = true,
+    })
+    vim.api.nvim_set_hl(0, "CmpItemKindLightItalic", {
+      italic = true,
+    })
+    ${builtins.readFile ./lua/utils.lua}
+    '';
 
     # Set 'vi' and 'vim' aliases to nixvim
     viAlias = true;
@@ -26,6 +35,7 @@
 
     };
     extraPlugins = with pkgs.vimPlugins; [
+      lspkind-nvim
       mini-icons
       vim-devicons
       nvim-web-devicons
