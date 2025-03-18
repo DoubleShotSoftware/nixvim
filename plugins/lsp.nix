@@ -120,6 +120,7 @@
       lua_ls.enable = true;
       nginx_language_server.enable = true;
       # marksman.enable = true;
+      yamlls.enable = true;
       nil_ls.enable = true;
       nixd.enable = true;
       pyright.enable = true;
@@ -142,6 +143,7 @@
       shfmt
       alejandra
       mdformat
+      jq
     ];
   };
 }
