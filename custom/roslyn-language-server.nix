@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  version = "633a61c30801a854cf52f4492ec8702a8c4ec0e9";
+  version = "0d298e68efa511df18a0bd4fd9a0c9bf70ebdbf2";
   roslyn-language-server = pkgs.vimUtils.buildVimPlugin {
     inherit version;
     name = "roslyn.nvim";
@@ -8,7 +8,7 @@ let
       owner = "seblyng";
       repo = "roslyn.nvim";
       rev = version;
-      hash = "sha256-PX0r8TFF/Y22zmx+5nYpbNjwKg4nk2N5U41uYE7YnE8=";
+      hash = "sha256-UgFY13WKxV1jhjzqZS1AHMN/dMrgt3uAkhZjAuthHMg";
     };
   };
 in {

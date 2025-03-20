@@ -7,50 +7,69 @@
     enable = true;
     settings = {
       win.border = "single";
-
       # Disable which-key when in neo-tree or telescope
       icons.group = "";
       disable.ft = [ "TelescopePrompt" "neo-tree" "neo-tree-popup" ];
       spec = [
         {
           __unkeyed-1 = "<leader>b";
-          group = "󰓩 Buffers";
+          icon = "󰓩 ";
+          group = "Buffers";
         }
         {
           __unkeyed-1 = "<leader>bs";
-          group = "󰒺 Sort Buffers";
+          icon = "󰒺";
+          group = "Sort Buffers";
         }
         {
           __unkeyed-1 = "<leader>d";
-          group = " Debugger";
+          icon = "";
+          group = "Debugger";
         }
         {
           __unkeyed-1 = "<leader>f";
-          group = " Find";
+          icon = "";
+          group = "Find";
         }
         {
           __unkeyed-1 = "<leader>g";
-          group = "󰊢 Git";
+          icon = "󰊢";
+          group = "Git";
         }
         {
           __unkeyed-1 = "<leader>l";
-          group = " Language Tools";
+          icon = "";
+          group = "Language Tools";
         }
         {
           __unkeyed-1 = "<leader>m";
-          group = " Markdown";
+          icon = "";
+          group = "Markdown";
         }
         {
           __unkeyed-1 = "<leader>s";
-          group = "󱂬 Session";
+          icon = "󱂬";
+          group = "Session";
         }
         {
           __unkeyed-1 = "<leader>t";
-          group = " Terminal";
+          icon = "";
+          group = "Terminal";
         }
         {
           __unkeyed-1 = "<leader>u";
-          group = " UI/UX";
+          icon = "";
+          group = "UI/UX";
+        }
+        {
+          __unkeyed-1 = "<leader>T";
+          icon = "󰓩";
+          group = "Tabs";
+        }
+        {
+          __unkeyed-1 = "<leader>lb";
+          icon = "󰏖";
+          group = "Project";
         }
       ];
     };

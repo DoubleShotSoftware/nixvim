@@ -33,7 +33,7 @@
       c-sharp
     ];
     settings = {
-      auto_install = false;
+      auto_install = true;
       ensure_installed =
         [ "c_sharp" "bash" "dockerfile" "typescript" "python" ];
       highlight = {
@@ -58,7 +58,6 @@
       };
       sync_install = false;
     };
-
   };
 
   rootOpts = { };
