@@ -23,6 +23,7 @@
         { name = "nvim_lsp"; }
         { name = "luasnip"; }
         { name = "nvim_lua"; }
+        { name = "easy-dotnet"; }
         { name = "treesitter"; }
         { name = "path"; }
         { name = "buffer"; }

@@ -8,7 +8,7 @@ require("roslyn").setup({
 		"--logLevel=Information",
 		"--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
 	},
-	filewatching = true,
+	filewatching = "auto",
 	settings = {
 		["csharp|background_analysis"] = {
             dotnet_analyzer_diagnostics_scope = "fullSolution",
