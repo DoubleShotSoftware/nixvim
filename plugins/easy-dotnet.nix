@@ -28,6 +28,8 @@ in {
     extraPackages = with pkgs.unstable; [
       dotnet-outdated
       dotnetPackages.Nuget
+      dotnet-ef
+      netcoredbg
     ];
     extraFiles = {
       "ftdetect/natural.vim" = {
@@ -45,12 +47,11 @@ in {
       "after/ftplugin/cs.lua" = {
         text = # lua
           ''
-          ${cmpRegister}
-          ${commonKey}
+            ${cmpRegister}
+            ${commonKey}
           '';
 
       };
     };
   };
 }
-
