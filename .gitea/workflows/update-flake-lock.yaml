@@ -1,12 +1,16 @@
 name: update-flake-lock
 on:
+  push:
+    branches:
+      - '**'
+      - init
   workflow_dispatch: # allows manual triggering
-#  schedule:
-#    - cron: '0 1 * * *'
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   lockfile:
-    runs-on: ubuntu-latest
+    runs-on: linux
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
