@@ -1,6 +1,9 @@
 { pkgs, ... }: {
   extraPlugins = with pkgs.vimPlugins; [ neoformat ];
   extraConfigLuaPost = builtins.readFile ../lua/neoformat.lua;
+  extraPackages = with pkgs; [
+    stylua
+  ];
   keymaps = [{
     mode = "n";
     key = "<leader>bf";
