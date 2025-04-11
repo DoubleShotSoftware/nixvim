@@ -1,13 +1,7 @@
 { pkgs, ... }: {
   extraPlugins = with pkgs.vimPlugins; [ neoformat ];
-  extraPackages = with pkgs.unstable; [
-    topiary
-    taplo # toml
-  ];
   extraConfigLuaPost = builtins.readFile ../lua/neoformat.lua;
-  extraPackages = with pkgs; [
-    stylua
-  ];
+  extraPackages = with pkgs; [ stylua luaformatter  ];
   keymaps = [{
     mode = "n";
     key = "<leader>bf";

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   opts = {
     enable = true;
-    gitPackage = pkgs.gitFull;
   };
   # rootOpts = {
   #   keymaps = [
