@@ -27,7 +27,7 @@
       # Sync system clipboard
       register = "unnamedplus";
     };
-    plugins = { zellij.enable = true; };
+    extraPackages = with pkgs; [ gcc clang cmake zig ];
     extraPlugins = with pkgs.vimPlugins; [
       lspkind-nvim
       mini-icons
