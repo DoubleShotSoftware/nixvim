@@ -5,7 +5,7 @@ function(entry, vim_item)
       luasnip  = "",
       path     = "📁",
       nvim_lua = "",
-      treesitter= "𐂷";
+      treesitter= "󰐆";
       git= "";
     }
   local lspkind = require('lspkind')
@@ -14,7 +14,7 @@ function(entry, vim_item)
   local source_icon = source_icons[source_name] or ""  -- fallback icon
   local kind_icon = lspkind.symbol_map[vim_item.kind] or ""
     -- A Unicode delimiter (choose what you like: "→", "»", "", etc.)
-  local arrow = " → "
+  local arrow = "  "
 
   -- Combine them in the "kind" field to show a parent/child relationship
   -- Example:  →  or  →  etc.
