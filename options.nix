@@ -1,4 +1,8 @@
 { ... }: {
+  diagnostic.settings = {
+
+    virtual_lines = { current_line = true; };
+  };
   opts = {
     # allows neovim to access the system clipboard
     # Every wrapped line will continue visually indented
@@ -71,7 +75,7 @@
     # look for foldenable: https://github.com/neovim/neovim/blob/master/src/nvim/options.lua
     # Vim cheatsheet, look for folds keys: https://devhints.io/vim
     # default is "normal"
-    foldmethod = "indent";
+    foldmethod = "expr";
     foldenable = true;
     foldlevel = 8;
   };

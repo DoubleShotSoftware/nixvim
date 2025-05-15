@@ -5,8 +5,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "nanozuki";
       repo = "tabby.nvim";
-      rev = "v2.7.4";
-      hash = "sha256-bfyvZkJSCLyTFbMhbjWXJLV2yITXg+Yv++p6gu8TGIU=";
+      rev = "0207f9eba073be14688ffdbec68064835066e770";
+      hash = "sha256-I6ShLFhRj3pdSFqEOViXhWzL9UnrXcs7IFtgRsnIo30=";
     };
 
   };

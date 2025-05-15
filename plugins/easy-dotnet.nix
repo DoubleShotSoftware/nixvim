@@ -1,10 +1,10 @@
 { pkgs, ... }:
 let
-  cmpRegister = # lua
-    ''
-      local cmp = require('cmp')
-      cmp.register_source("easy-dotnet", require("easy-dotnet").package_completion_source)
-    '';
+  # cmpRegister = # lua
+  #   ''
+  #     local cmp = require('cmp')
+  #     cmp.register_source("easy-dotnet", require("easy-dotnet").package_completion_source)
+  #   '';
   commonKey = # lua
     ''
       vim.keymap.set("n", "<leader>lbe", "<cmd>DotnetUI<CR>", { buffer = true, desc = "Show Easy Dotnet UI" })
@@ -18,11 +18,6 @@ in {
     enable = true;
     package = pkgs.unstable.vimPlugins.easy-dotnet-nvim;
     settings = { };
-    luaConfig.post = # lua
-      ''
-        if vim.bo.filetype == "cs" or vim.bo.filetype == "csharp" then
-        end 
-      '';
   };
   rootOpts = {
     extraPackages = with pkgs.unstable; [
@@ -39,15 +34,12 @@ in {
       "after/ftplugin/csproj.lua" = {
         text = # lua
           ''
-            ${cmpRegister}
             ${commonKey}
-            vim.keymap.set("n", "<leader>lpe", "<cmd>DotnetUI<CR>", { buffer = true, desc = "Show Easy Dotnet UI" })
           '';
       };
       "after/ftplugin/cs.lua" = {
         text = # lua
           ''
-            ${cmpRegister}
             ${commonKey}
           '';
 

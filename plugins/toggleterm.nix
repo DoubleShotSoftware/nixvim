@@ -101,5 +101,25 @@ _:
       action = "<cmd>TermSelect<cr>";
       options.desc = "List terminals";
     }
+    {
+      mode = [ "t" ];
+      key = "<C-h>";
+      action = "<cmd>wincmd h<cr>";
+    }
+    {
+      mode = [ "t" ];
+      key = "<C-j>";
+      action = "<cmd>wincmd j<cr>";
+    }
+    {
+      mode = [ "t" ];
+      key = "<C-k>";
+      action = "<cmd>wincmd k<cr>";
+    }
+    {
+      mode = [ "t" ];
+      key = "<C-l>";
+      action = "<cmd>wincmd l<cr>";
+    }
   ];
 }

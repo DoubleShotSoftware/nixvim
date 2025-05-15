@@ -30,6 +30,8 @@
             statix.enable = true;
           };
         });
+      nvimLicense = with nixpkgs.lib.licenses; [ asl20 vim ];
+      nvimMainttainers = with nixpkgs.maintainers; [ manveru rvolosatovs ];
       packages = forAllSystems (system:
         let
           pkgs = (import nixpkgs rec {
@@ -43,6 +45,32 @@
                 unstable = import nixpkgs-unstable {
                   inherit (prev) system;
                   inherit config;
+                  overlays = [
+                    (unstableFinal: unstablePrev: {
+                      neovim = unstablePrev.neovim.overrideAttrs (old: {
+                        meta = {
+                          license = with nixpkgs.lib.licenses; [ asl20 vim ];
+                          maintainers = with nixpkgs.maintainers; [
+                            manveru
+                            rvolosatovs
+                          ];
+                          platforms = nixpkgs.lib.platforms.unix;
+                        };
+                      });
+                      neovim-unwrapped =
+                        unstablePrev.neovim-unwrapped.overrideAttrs (old: {
+                          meta = {
+                            license = with nixpkgs.lib.licenses; [ asl20 vim ];
+                            maintainers = with nixpkgs.maintainers; [
+                              manveru
+                              rvolosatovs
+                            ];
+                            platforms = nixpkgs.lib.platforms.unix;
+                          };
+                        });
+                    })
+
+                  ];
                 };
               })
             ];

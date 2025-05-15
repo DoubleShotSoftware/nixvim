@@ -4,17 +4,6 @@
   opts = {
     enable = true;
     inlayHints = true;
-    onAttach = ''
-      if client.name == "csharp_ls" 
-      then
-        -- Delay to ensure solution is fully loaded
-        vim.defer_fn(function()
-         vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        end, 2500) -- Delay by 25000ms (2.5 second)
-      end 
-    '';
-
-    # Set keymaps when LSP is attached
     keymaps = {
       extra = [
         {
@@ -110,16 +99,14 @@
     # Load all servers definitions
     servers = {
       bashls.enable = true;
-      # csharp_ls.enable = true;
       docker_compose_language_service.enable = true;
       dockerls.enable = true;
-      # Disable for now due to symlink being hard errors
-      eslint.enable = false;
+      eslint.enable = true;
       html.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
       nginx_language_server.enable = true;
-      # marksman.enable = true;
+      marksman.enable = true;
       yamlls.enable = true;
       nil_ls.enable = true;
       nixd.enable = true;
