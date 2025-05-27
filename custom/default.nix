@@ -6,5 +6,6 @@
     ./telescope-tabs.nix
     ./roslyn-language-server.nix
     ./colorful-menu.nix
+    ./movement-mode.nix
   ];
 }

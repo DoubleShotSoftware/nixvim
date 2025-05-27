@@ -3,11 +3,7 @@
     enable = true;
     package = pkgs.unstable.vimPlugins.avante-nvim;
     settings = {
-      provider = "ollama";
-      ollama = {
-        endpoint = "http://172.16.1.22:11434/";
-        model = "qwen2.5-coder:14b";
-      };
+      provider = "claude";
       diff = {
         autojump = true;
         debug = false;

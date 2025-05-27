@@ -24,7 +24,6 @@ dashboard.section.buttons.val = {
 	dashboard.button("g", "󰱼    find text", ":Telescope live_grep_args<CR>"),
 	dashboard.button("h", "    browse git", ":Flog<CR>"),
 	dashboard.button("s", " " .. " Restore Session", ':lua require("persistence").load() <cr>'),
-	dashboard.button("m", "󱌣    mason", ":Mason<CR>"),
 	dashboard.button("q", "󰭿    quit", ":qa<CR>"),
 }
 for _, button in ipairs(dashboard.section.buttons.val) do

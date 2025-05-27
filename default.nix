@@ -15,6 +15,9 @@
         italic = true,
       })
       ${builtins.readFile ./lua/utils.lua}
+
+      -- Explicitly add lua directory to runtime path
+      vim.opt.runtimepath:append(vim.fn.stdpath('config') .. '/lua')
     '';
     # Set 'vi' and 'vim' aliases to nixvim
     viAlias = true;
