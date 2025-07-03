@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   opts = {
     enable = true;
-    package = pkgs.unstable.vimPlugins.noice-nvim;
+    package = pkgs.unstable.vimPlugins.edgy-nvim;
   };
   rootOpts = { };
 }
