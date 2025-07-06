@@ -2,7 +2,7 @@
 
   imports = [ ./custom ./config ./plugins ./utils ./options.nix ];
   config = {
-    package = pkgs.unstable.neovim-unwrapped;
+    #package = pkgs.unstable.neovim-unwrapped;
     editorconfig.enable = true;
     # Use <Space> as leader key
     globals.mapleader = " ";

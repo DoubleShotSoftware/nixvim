@@ -30,7 +30,27 @@ in {
             semantic_token_resolution = { enabled = false; };
           };
         };
-        menu = { draw = { treesitter = [ "lsp" ]; }; };
+        menu = {
+          draw = {
+            treesitter = [ "lsp" ];
+            # Colorful menu integration
+            columns = [ { kind_icon = { }; } { label = { gap = 1; }; } ];
+            components = {
+              label = {
+                text.__raw = ''
+                  function(ctx)
+                    return require("colorful-menu").blink_components_text(ctx)
+                  end
+                '';
+                highlight.__raw = ''
+                  function(ctx)
+                    return require("colorful-menu").blink_components_highlight(ctx)
+                  end
+                '';
+              };
+            };
+          };
+        };
         documentation = {
           auto_show = true;
           auto_show_delay_ms = 200;
@@ -77,8 +97,8 @@ in {
           # Show the signature help automatically
           # Show the signature help window after typing any of alphanumerics; `-` or `_`
           show_on_keyword = false;
-          blocked_trigger_characters = [];
-          blocked_retrigger_characters = [];
+          blocked_trigger_characters = [ ];
+          blocked_retrigger_characters = [ ];
           # Show the signature help window after typing a trigger character
           show_on_trigger_character = true;
           # Show the signature help window when entering insert mode

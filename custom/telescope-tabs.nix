@@ -5,9 +5,10 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "LukasPietzschmann";
       repo = "telescope-tabs";
-      rev = "0a678eefcb71ebe5cb0876aa71dd2e2583d27fd3";
-      hash = "sha256-IvxZVHPtApnzUXIQzklT2C2kAxgtAkBUq3GNxwgPdPY=";
+      rev = "9ca0800d4e9c2610d5cac4d121cde0d9fbd89a64";
+      hash = "sha256-++iTyrjl6IX2GmwljbgcwiYvZ3ghsX732VWMcyu1ciw=";
     };
+    dependencies = with pkgs.vimPlugins; [ telescope-nvim plenary-nvim ];
 
   };
 in {
