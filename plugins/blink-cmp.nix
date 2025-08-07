@@ -34,7 +34,11 @@ in {
           draw = {
             treesitter = [ "lsp" ];
             # Colorful menu integration
-            columns = [ { kind_icon = { }; } { label = { gap = 1; }; } ];
+            columns = [ 
+              [ "kind_icon" ] 
+              [ "label" ] 
+            ];
+            align_to = "kind_icon";
             components = {
               label = {
                 text.__raw = ''
