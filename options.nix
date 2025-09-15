@@ -5,6 +5,7 @@
   };
   opts = {
     # allows neovim to access the system clipboard
+    clipboard = "unnamedplus";
     # Every wrapped line will continue visually indented
     breakindent = true;
     # more space in the neovim command line for displaying messages

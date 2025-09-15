@@ -10,6 +10,12 @@ let
       rev = version;
       hash = "sha256-jrWzIoaorwQk8phqxAM5zoio4reM1e+qjXd/4Syhp24=";
     };
+    # Patch to fix deprecated client methods
+    postPatch = ''
+      find . -name "*.lua" -type f -exec sed -i 's/client\.notify/client:notify/g' {} +
+      find . -name "*.lua" -type f -exec sed -i 's/client\.request/client:request/g' {} +
+      find . -name "*.lua" -type f -exec sed -i 's/client\.supports_method/client:supports_method/g' {} +
+    '';
   };
     dotnetSDK = (with pkgs.unstable.dotnetCorePackages;
     combinePackages [

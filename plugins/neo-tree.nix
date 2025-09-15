@@ -51,7 +51,6 @@
         # https://github.com/AstroNvim/AstroNvim/blob/v4.7.7/lua/astronvim/plugins/neo-tree.lua#L136-L168
         copy_selector.__raw = ''
           function(state)
-            local notify = require("astrocore").notify
             local node = state.tree:get_node()
             local filepath = node:get_id()
             local filename = node.name
@@ -69,7 +68,7 @@
 
             local options = vim.tbl_filter(function(val) return vals[val] ~= "" end, vim.tbl_keys(vals))
             if vim.tbl_isempty(options) then
-              notify("No values to copy", vim.log.levels.WARN)
+              vim.notify("No values to copy", vim.log.levels.WARN)
               return
             end
             table.sort(options)
@@ -79,7 +78,7 @@
             }, function(choice)
               local result = vals[choice]
               if result then
-                notify(("Copied: `%s`"):format(result))
+                vim.notify(("Copied: `%s`"):format(result))
                 vim.fn.setreg("+", result)
               end
             end)

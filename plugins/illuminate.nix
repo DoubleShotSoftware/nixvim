@@ -9,10 +9,9 @@ _:
     minCountToHighlight = 2;
 
     extraOptions = {
-      largeFileCutoff.__raw =
-        "vim.tbl_get(require 'astrocore', 'config', 'features', 'large_buf', 'lines')";
+      largeFileCutoff = 10000;  # Set a reasonable default for large file cutoff
       should_enable.__raw =
-        "function(bufnr) return require('astrocore.buffer').is_valid(bufnr) end";
+        "function(bufnr) return vim.api.nvim_buf_is_valid(bufnr) and vim.bo[bufnr].buflisted end";
     };
   };
 

@@ -77,22 +77,18 @@
 
         vim.diagnostic.config({
           virtual_text = true,
-          signs = true,
+          signs = {
+            text = {
+              [vim.diagnostic.severity.ERROR] = "${icons.DiagnosticError}",
+              [vim.diagnostic.severity.WARN] = "${icons.DiagnosticWarn}",
+              [vim.diagnostic.severity.INFO] = "${icons.DiagnosticInfo}",
+              [vim.diagnostic.severity.HINT] = "${icons.DiagnosticHint}",
+            },
+          },
           underline = true,
           update_in_insert = true,
           severity_sort = false,
         })
-
-        local signs = {
-          Error = "${icons.DiagnosticError}",
-          Warn = "${icons.DiagnosticWarn}",
-          Info = "${icons.DiagnosticInfo}",
-          Hint = "${icons.DiagnosticHint}",
-        }
-        for type, icon in pairs(signs) do
-          local hl = "DiagnosticSign" .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-        end
       ${builtins.readFile ../lua/lsp_cmds.lua}
     '';
 
